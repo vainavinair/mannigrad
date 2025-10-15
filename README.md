@@ -95,4 +95,4 @@ For more advanced usage, see the code in the `ManniGrad` and `example` folders, 
 
 **Credit:**
 - Original concept and tutorial by [Andrej Karpathy](https://www.youtube.com/watch?v=VMj-3S1tku0)
-- Extensions and new features by [Your Name]
+- Extensions and new features by yours truly.
