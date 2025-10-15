@@ -56,8 +56,7 @@ class Value:
         return self * other**-1
 
     def __pow__(self, exponent):
-        assert isinstance(exponent, (int, float)
-                          ), "Only supports int/float powers"
+        assert isinstance(exponent, (int, float)), "Only supports int/float powers"
         out = Value(self.data ** exponent, (self,), f'**{exponent}')
 
         def _backward():
