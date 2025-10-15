@@ -1,5 +1,5 @@
 import random
-from ManniGrad import Value  # assuming your Value class is defined
+from ManniGrad.engine import Value 
 
 class Neuron:
     def __init__(self,nin,activation=None):
@@ -10,7 +10,7 @@ class Neuron:
     def __call__(self,x):
         act = sum(wi*xi for wi,xi in zip(self.weights,x)) + self.bias
         if self.activation is None:
-            out = act # Linear activation
+            out = act # linear acti
         else:
             out = self.activation(act)
         return out
@@ -61,11 +61,11 @@ class MLP:
 
 class Optimizer:
     def __init__(self, params, lr=0.01):
-        self.params = list(params)  # make sure it's iterable
+        self.params = list(params)  
         self.lr = lr
 
     def step(self):
-        raise NotImplementedError  # force subclasses to implement their own update rule
+        raise NotImplementedError  # to be implemented in subclasses
 
     def zero_grad(self):
         for p in self.params:
@@ -96,14 +96,11 @@ class Adam(Optimizer):
         self.t += 1
         for i, p in enumerate(self.params):
             if hasattr(p, 'grad'):
-                # Update biased moment estimates
                 self.m[i] = self.beta1 * self.m[i] + (1 - self.beta1) * p.grad
                 self.v[i] = self.beta2 * self.v[i] + (1 - self.beta2) * (p.grad ** 2)
 
-                # Compute bias-corrected estimates
                 m_hat = self.m[i] / (1 - self.beta1 ** self.t)
                 v_hat = self.v[i] / (1 - self.beta2 ** self.t)
-
-                # Parameter update
+                
                 p.data -= self.lr * m_hat / ((v_hat ** 0.5) + self.eps)
 
