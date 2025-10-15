@@ -1,10 +1,6 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from ManniGrad.engine import Value
-from ManniGrad.nn import MLP, SGD
-from ManniGrad.utils import mse_loss
+from mannigrad.engine import Value
+from mannigrad.nn import MLP, SGD
+from mannigrad.utils import mse_loss
 
 # 2 inputs → [4, 4, 1] network (2 hidden layers with 4 neurons each)
 mlp = MLP(2, [4, 4, 1], activations=[Value.tanh, Value.tanh, Value.tanh])

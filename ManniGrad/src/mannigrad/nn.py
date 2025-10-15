@@ -1,5 +1,5 @@
 import random
-from ManniGrad.engine import Value 
+from mannigrad.engine import Value 
 
 class Neuron:
     def __init__(self,nin,activation=None):

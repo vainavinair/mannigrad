@@ -21,20 +21,10 @@ This project is inspired by [Andrej Karpathy's micrograd tutorial](https://www.y
 
 ### Installation & Setup
 
-1. **Clone the repository** (if you haven't already):
-   ```sh
-   git clone <repo-url>
-   cd micrograd
-   ```
-2. **(Optional) Create a virtual environment:**
-   ```sh
-   python -m venv .venv
-   .venv\Scripts\activate  # On Windows
-   # Or
-   source .venv/bin/activate  # On Linux/Mac
-   ```
-3. **Install dependencies:**
-   - No external dependencies are required for core ManniGrad. All code is pure Python.
+Use pip
+```
+pip install mannigrad
+```
 
 ### Using ManniGrad
 
@@ -43,9 +33,9 @@ You can use ManniGrad by importing its modules in your own scripts or by running
 #### Example: Training a Neural Network
 
 ```python
-from ManniGrad.engine import Value
-from ManniGrad.nn import MLP, SGD, Adam
-from ManniGrad.utils import mse_loss
+from mannigrad.engine import Value
+from mannigrad.nn import MLP, SGD, Adam
+from mannigrad.utils import mse_loss
 
 # Define a simple MLP: 2 inputs, two hidden layers (4 neurons each), 1 output
 mlp = MLP(2, [4, 4, 1], activations=[Value.relu, Value.sigmoid, Value.tanh])
@@ -87,11 +77,6 @@ From the project root, run:
 python example/train_model.py
 ```
 
----
-
-For more advanced usage, see the code in the `ManniGrad` and `example` folders, or adapt the example above for your own data and architectures.
-
----
 
 **Credit:**
 - Original concept and tutorial by [Andrej Karpathy](https://www.youtube.com/watch?v=VMj-3S1tku0)
