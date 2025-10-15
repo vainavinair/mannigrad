@@ -21,7 +21,7 @@ This project is inspired by [Andrej Karpathy's micrograd tutorial](https://www.y
 
 ### Installation & Setup
 
-Use pip
+Use pip to install [ManniGrad](https://pypi.org/project/mannigrad)
 ```
 pip install mannigrad
 ```
